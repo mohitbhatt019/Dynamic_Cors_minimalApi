@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "0OeoP3rlYIUvzSbHnxTb2u7Jz6tj6QHR8y77Y1fsIBI=",
+  "Source": "ApiKeyBackend",
+  "BasePath": "_content/ApiKeyBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
