@@ -31,7 +31,7 @@ namespace ApiKeyBackend.Repository
 
         }
 
-        [DisableCors]
+        //[DisableCors]
          public dynamic GetCors()
         {
             var cors = _context.Products.ToList();

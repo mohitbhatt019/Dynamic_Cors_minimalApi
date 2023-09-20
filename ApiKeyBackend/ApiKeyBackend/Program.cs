@@ -36,7 +36,7 @@ if (dbcontext != null)
     foreach (var item in origindata)
     {
         originlist.Add(item.CorsPolicy);
-        //originlist.Add("http://localhost:3001");
+       originlist.Add("http://localhost:3000");
     }
 
 };
@@ -61,13 +61,13 @@ if (dbcontext != null)
 
 
 //Cors
-//builder.Services.AddCors(p => p.AddDefaultPolicy(build =>
-//{
-//    build.WithOrigins(originlist.ToArray());
-//    //build.WithOrigins("*");
-//    build.AllowAnyMethod();
-//    build.AllowAnyHeader();
-//}));
+builder.Services.AddCors(p => p.AddDefaultPolicy(build =>
+{
+    build.WithOrigins(originlist.ToArray());
+    //build.WithOrigins("*");
+    build.AllowAnyMethod();
+    build.AllowAnyHeader();
+}));
 
 
 
@@ -82,11 +82,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
 //app.UseCorsMiddleware();
-app.UseCustomAuthMiddleware();
+//app./*UseCustomAuthMiddleware*/
 //app.UseCors("MyPolicy");
-//app.UseCors();
+app.UseCors();
+app.UseHttpsRedirection();
 //app.UseCors("MyPolicy");
 
 var summaries = new[]

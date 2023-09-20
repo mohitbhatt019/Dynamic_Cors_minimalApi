@@ -22,7 +22,7 @@ namespace ApiKeyBackend.Controller
             app.MapGet("/users", Users);
             app.MapPost("/ValidateApi", ValidateApi);
             app.MapPost($"/addproduct", AddProduct);
-            app.MapGet($"/Disable", Disable);
+           // app.MapGet($"/Disable", Disable);
 
             return app;
             
@@ -67,16 +67,7 @@ namespace ApiKeyBackend.Controller
            return Results.StatusCode(StatusCodes.Status404NotFound);
         }
 
-         [DisableCors]
-        public async static Task<IResult> Disable(IAuthenticateRepository repository)
-        {
-            var cors = repository.GetCors();
-            if (cors != null)
-            {
-                return null;
-            }
-            return null;
-        }
+ 
 
         //public async static Task<IResult> ValidateApi(IAuthenticateRepository _service, HttpRequest req, IHttpContextAccessor httpContextAccessor, IProductRepository _productRepository, HttpContext context)
         //{
